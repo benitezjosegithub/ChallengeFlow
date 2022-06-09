@@ -1,7 +1,9 @@
 # ChallengeFlow
 
 Este es un challenge donde se crea una API que provee en formato JSON el estado del tiempo basado en diferentes endpoints.
-##Introducción
+
+## Introducción
+
 El siguiente ejercicio plantea el desarrollo de una aplicación de consulta de clima que pueda
 visualizar el pronóstico actual, próximos 5 días para la ciudad actual y de otras 5 ciudades seleccionables.
 Además del desarrollo específico de las funcionalidades, se requiere identificar y generar los casos de prueba que se consideren necesarios.
