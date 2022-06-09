@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 exports.options = {
   routePrefix: '/v1',
   exposeRoute: true,
@@ -11,7 +13,7 @@ exports.options = {
       url: 'https://swagger.io',
       description: 'Find more info here',
     },
-    host: 'localhost:3000',
+    host: `localhost:${process.env.PORT}`,
     schemes: ['http'],
     consumes: ['application/json'],
     produces: ['application/json'],

@@ -1,14 +1,15 @@
-const fastify = require('fastify')({ logger: true });
-// const swagger = require('./utils/swagger');
+/* eslint-disable global-require */
+const fastify = require('fastify');
+const swagger = require('./utils/swagger');
 const Rutes = require('./routes/routes');
 
-// fastify.register(require('fastify-swagger'), swagger.options);
-// fastify.register(require('./routes/routes'), { prefix: '/v1' })
-Rutes.forEach((route) => {
-  fastify.route(route);
-});
-// fastify.get('/', async (request, reply) => {
-//   reply.send({ hello: 'world' });
-// });
+function build(opts = {}) {
+  const app = fastify(opts);
+  app.register(require('fastify-swagger'), swagger.options);
+  Rutes.forEach((route) => {
+    app.route(route);
+  });
+  return app;
+}
 
-module.exports = fastify;
+module.exports = build;

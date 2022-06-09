@@ -7,7 +7,6 @@ const getLocation = async (req, res) => {
     res.send(data);
   } catch (err) {
     fastify.log.error(err);
-    process.exit(1);
   }
 };
 
@@ -42,7 +41,6 @@ const getCurrent = async (req, res) => {
     }
   } catch (err) {
     fastify.log.error(err);
-    process.exit(1);
   }
 };
 
@@ -79,7 +77,6 @@ const getForecast = async (req, res) => {
     }
   } catch (err) {
     fastify.log.error(err);
-    process.exit(1);
   }
 };
 
