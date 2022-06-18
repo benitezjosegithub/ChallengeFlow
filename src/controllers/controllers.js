@@ -3,7 +3,7 @@ const searchdata = require('./controller.searchdata');
 
 const getLocation = async (req, res) => {
   try {
-    const data = await searchdata.getCurrentLocation();
+    const data = await searchdata.getCurrentLocation(req.headers['x-forwarded-for']);
     res.send(data);
   } catch (err) {
     fastify.log.error(err);

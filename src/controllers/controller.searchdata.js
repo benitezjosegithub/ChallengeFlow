@@ -1,3 +1,4 @@
+const fetch = require('node-fetch');
 require('dotenv').config();
 
 const getFetch = async (url) => {
@@ -18,9 +19,9 @@ const getWeatherByCityLocationData = async (city, option) => {
   return data;
 };
 
-const getCurrentLocation = async () => {
-  const ip = await getFetch('https://api.ipify.org?format=json');
-  const data = await getFetch(`http://ip-api.com/json/${ip.ip}`);
+const getCurrentLocation = async (ip) => {
+  //const ip =  //await getFetch('https://api.ipify.org?format=json');
+  const data = await getFetch(`http://ip-api.com/json/${ip}`);
   const response = {
     country: data.country,
     countryCode: data.countryCode,
