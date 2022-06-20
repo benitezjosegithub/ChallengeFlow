@@ -14,7 +14,7 @@ Las configuraciones extra y variables de entorno necesarias para iniciar la apli
 
 ## Detalles técnicos
 
-Esta API es creada en nodejs v18.3.0 con
+Esta API es creada en la vearsion LTS de nodejs con
 
 - **fastify** para crear el servidor
 - **tap** para los tests
