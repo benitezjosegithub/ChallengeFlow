@@ -3,7 +3,7 @@ const searchdata = require('./controller.searchdata');
 
 const getLocation = async (req, res) => {
   try {
-    const data = await searchdata.getCurrentLocation();
+    const data = await searchdata.getCurrentLocation(req.headers['x-forwarded-for']);
     res.send(data);
   } catch (err) {
     fastify.log.error(err);
@@ -26,7 +26,7 @@ const getCurrent = async (req, res) => {
       };
       res.send(response);
     } else {
-      const location = await searchdata.getCurrentLocation();
+      const location = await searchdata.getCurrentLocation(req.headers['x-forwarded-for']);
       const data = await searchdata.getWeatherByCurrentLocation(
         location.lat,
         location.lon,
@@ -61,7 +61,7 @@ const getForecast = async (req, res) => {
       };
       res.send(response);
     } else {
-      const location = await searchdata.getCurrentLocation();
+      const location = await searchdata.getCurrentLocation(req.headers['x-forwarded-for']);
       const data = await searchdata.getWeatherByCurrentLocation(
         location.lat,
         location.lon,
